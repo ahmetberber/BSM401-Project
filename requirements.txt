@@ -1,0 +1,14 @@
+google-play-scraper
+pandas
+app_store_scraper
+gensim
+nltk
+scikit-learn
+wordcloud
+matplotlib
+grpcio
+grpcio-tools
+scipy
+bertopic
+umap-learn
+hdbscan
