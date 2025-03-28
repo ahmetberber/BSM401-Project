@@ -172,3 +172,10 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+scipy/
+morphology_pb2_grpc.py
+morphology_pb2.py
+morphology.proto
+zemberek-full.jar
+.DS_Store
