@@ -1,7 +1,7 @@
 from sentence_transformers import SentenceTransformer, util
 
 # Türkçe platformwork filtresi uygulayan fonksiyon
-def filter_platformwork_semantically(df, top_k=300):
+def filter_platformwork_semantically(df):
     model = SentenceTransformer("paraphrase-multilingual-MiniLM-L12-v2")
     targets = [
         "kurye olarak çalışmak çok yorucu",

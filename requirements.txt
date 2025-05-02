@@ -2,7 +2,7 @@
 google-play-scraper==1.2.7
 app-store-scraper==0.3.5
 praw==7.8.1
-requests==2.32.3
+requests==2.23.0
 
 # Veri işleme
 pandas==2.2.3
@@ -24,10 +24,10 @@ bertopic==0.17.0
 sentence-transformers==3.4.1
 
 # Transformers ve Zero-shot
-transformers==4.35.2
+transformers==4.41.0
 sentencepiece==0.2.0
 torch==2.6.0
-tokenizers==0.15.2
+tokenizers==0.19
 huggingface-hub==0.29.3
 safetensors==0.5.3
 
