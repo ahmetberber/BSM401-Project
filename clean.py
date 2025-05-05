@@ -8,31 +8,20 @@ from nltk.corpus import stopwords
 
 # Download Turkish stopwords
 nltk.download('stopwords')
-stop_words = set(stopwords.words('turkish'))
+language = None
 
 # gRPC channel and stub for morphology service
 channel = grpc.insecure_channel('localhost:6789')
 stub = morphology_pb2_grpc.MorphologyServiceStub(channel)
-
-# Normalize Turkish characters to their Latin equivalents.
-def normalize_text(text):
-    replacements = {
-        "ı": "i", "ğ": "g", "ü": "u",
-        "ş": "s", "ö": "o", "ç": "c"
-    }
-    for old, new in replacements.items():
-        text = text.replace(old, new)
-    return text
 
 # Clean text by converting to lowercase, normalizing, removing punctuation, digits, and stopwords.
 def clean_text(text):
     if not isinstance(text, str):
         return ""
     text = text.lower()
-    # text = normalize_text(text)
     text = re.sub(r'[^\w\s]', '', text)  # Remove punctuation
     text = re.sub(r'\d+', '', text)      # Remove digits
-    text = ' '.join(word for word in text.split() if word not in stop_words)  # Remove stopwords
+    text = ' '.join(word for word in text.split() if word not in (set(stopwords.words('turkish')) if language == "tr" else set(stopwords.words('english'))))  # Remove stopwords
     return text
 
 # Lemmatize text using the gRPC morphology service.
@@ -59,8 +48,10 @@ def lemmatize_text(text):
     return ' '.join(lemmatized_words)
 
 # Process a DataFrame by cleaning and lemmatizing the 'text' column.
-def process_dataframe(df):
+def process_dataframe(df, lang):
+    global language
     try:
+        language = lang
         # Drop rows with missing 'text' values
         df = df.dropna(subset=["text"])
 

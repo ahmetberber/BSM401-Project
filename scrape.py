@@ -8,7 +8,7 @@ from clean import process_dataframe
 from semantic_filter import filter_platformwork_semantically
 
 # Number of reviews to fetch
-REVIEW_COUNT = 100
+REVIEW_COUNT = 500
 
 # Fetch reviews from the Apple App Store.
 def fetch_app_store_reviews(app_id, country='tr'):
@@ -67,7 +67,8 @@ def fetch_reddit_posts(query, client_id, client_secret, user_agent):
     ])
 
 def main():
-    reddit_data = fetch_reddit_posts(
+    # Fetch data from tr platforms
+    reddit_tr_data = fetch_reddit_posts(
         query="armut OR getir OR trendyol go OR yemeksepeti",
         client_id="Zjvht6OFPqavI2Wd3qiz2g",
         client_secret="HHBB9fgxvut-hRgdEYWlkST08Bq3wQ",
@@ -84,14 +85,32 @@ def main():
     trendyol_play_store = fetch_play_store_reviews("com.trendyol.go")
     getir_play_store = fetch_play_store_reviews("com.getir")
 
-    # Combine all data into a single DataFrame
-    combined_data = pd.concat([reddit_data, armut_play_store, yemeksepeti_play_store ,trendyol_play_store,
+    combined_tr_data = pd.concat([reddit_tr_data, armut_play_store, yemeksepeti_play_store ,trendyol_play_store,
                                getir_play_store, armut_app_store, yemeksepeti_app_store, trendyol_app_store,
                                getir_app_store], ignore_index=True)
 
+    # Fetch data from us platforms
+    reddit_us_data = fetch_reddit_posts(
+        query="flexjobs OR toptal OR deel",
+        client_id="Zjvht6OFPqavI2Wd3qiz2g",
+        client_secret="HHBB9fgxvut-hRgdEYWlkST08Bq3wQ",
+        user_agent="platformwork_project"
+    )
+
+    flexjob_app_store = fetch_app_store_reviews(app_id=800818884, country='us')
+    toptal_app_store = fetch_app_store_reviews(app_id=1378985638, country='us')
+    deel_app_store = fetch_app_store_reviews(app_id=6478083155, country='us')
+
+    flexjob_play_store = fetch_play_store_reviews("com.bold.flexjobs", lang='en', country='us')
+    toptal_play_store = fetch_play_store_reviews("com.toptal.talent", lang='en', country='us')
+    deel_play_store = fetch_play_store_reviews("com.deel.app", lang='en', country='us')
+
+    combined_us_data = pd.concat([reddit_us_data, flexjob_play_store, toptal_play_store, deel_play_store,
+                               flexjob_app_store, toptal_app_store, deel_app_store], ignore_index=True)
 
     # Clean and process the data
-    processed_data = process_dataframe(combined_data)
+    processed_tr_data = process_dataframe(combined_tr_data, lang='tr')
+    processed_us_data = process_dataframe(combined_us_data, lang='en')
 
     # Classify platformwork-related content by applying zero-shot classification
     # It requires a lot of resources and time, so it's commented out.
@@ -99,10 +118,13 @@ def main():
     # filtered_data = processed_data[processed_data['platformwork_related'] == True]
 
     # Filter semantically relevant comments
-    filtered_data = filter_platformwork_semantically(processed_data)
+    filtered_tr_data = filter_platformwork_semantically(processed_tr_data, lang='tr')
+    filtered_us_data = filter_platformwork_semantically(processed_us_data, lang='en')
 
-    # Save the filtered data to a CSV file
-    filtered_data.to_csv("comments.csv", index=False, encoding='utf-8')
+    # # Save the filtered data to a CSV file
+    filtered_tr_data.to_csv("comments_tr.csv", index=False, encoding='utf-8')
+    filtered_us_data.to_csv("comments_us.csv", index=False, encoding='utf-8')
+    print("Filtered data saved to comments_tr.csv and comments_us.csv")
 
 if __name__ == "__main__":
     main()

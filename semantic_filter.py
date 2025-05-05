@@ -1,126 +1,19 @@
+import pandas as pd
 from sentence_transformers import SentenceTransformer, util
 
-# Türkçe platformwork filtresi uygulayan fonksiyon
-def filter_platformwork_semantically(df):
+def filter_platformwork_semantically(df, lang="tr", threshold=0.4):
     model = SentenceTransformer("paraphrase-multilingual-MiniLM-L12-v2")
-    targets = [
-        "kurye olarak çalışmak çok yorucu",
-        "görev almakta zorlanıyorum",
-        "bugün hiç sipariş alamadım",
-        "moto kuryelik kazançları düştü",
-        "çalışma saatleri çok uzun",
-        "vardiya sistemi adaletsiz",
-        "çalışma şartları çok ağır",
-        "görev sayısı çok az",
-        "kazanç eskisi gibi değil",
-        "ek gelir için başladım ama yeterli değil",
-        "platform fazla komisyon kesiyor",
-        "puana göre sıralama adil değil",
-        "bonus sistemi kaldırıldı",
-        "sipariş bölümü çalışmıyor",
-        "görev süreleri çok kısa",
-        "sipariş teslimat süresi yetmiyor",
-        "çalışırken uygulama çöküyor",
-        "bütün gün görev bekledim ama çıkmadı",
-        "araç bakımını karşılayamıyorum",
-        "yakıt masrafları çok arttı",
-        "hizmet veren olarak mağdurum",
-        "müşteri kötü puan verdi kazancım düştü",
-        "görev alabilmek için erken kalkıyorum",
-        "platform destek vermiyor",
-        "sigortasız çalışıyorum",
-        "vergiler çok fazla",
-        "yardım hattı ilgilenmiyor",
-        "sürekli bölgem dışına görev atıyor",
-        "bekleme süresi çok uzun",
-        "çalıştığım saatle kazancım orantısız",
-        "görev başına düşen ücret azaldı",
-        "esnek çalışma deniliyor ama değil",
-        "hizmet sağlayıcı olarak değer görmüyorum",
-        "uygulama çok geç yanıt veriyor",
-        "puan sistemi hatalı işliyor",
-        "ceza puanı adaletsiz",
-        "sipariş başına kazancım yetmiyor",
-        "bu işten geçinmek zorlaştı",
-        "platformun desteği yok",
-        "görev saatleri dışında boşta bekliyorum",
-        "kendi ekipmanımla çalışıyorum ama karşılığı yok",
-        "yağmurda çalışmak çok tehlikeli",
-        "platform beni korumuyor",
-        "mola süresi bile yok",
-        "güvenlik önlemleri yetersiz",
-        "teslimatlar artınca sistem yavaşlıyor",
-        "puan sistemine göre çalışmak zorlayıcı",
-        "ödeme günü değişti bu ay",
-        "gece çalışmaları daha riskli",
-        "çalışanlar arasında rekabet çok yüksek",
-        "hizmet sağlayıcılar hep suçlanıyor",
-        "herkes bu işi geçici yapıyor",
-        "bu platformda uzun vadeli çalışılmaz",
-        "fiziksel olarak çok yorucu",
-        "hizmet sağlayıcı olarak şikayetçiyim",
-        "kendi aracımla çalışmak masraflı",
-        "platform haksız kazanç sağlıyor",
-        "müşteri şikayetleri dikkate alınıyor ama bizimkiler alınmıyor",
-        "performansa dayalı ödeme sistemi adil değil",
-        "çalışan memnuniyeti umursanmıyor",
-        "sistem çok dengesiz çalışıyor",
-        "mesai mefhumu yok",
-        "daha fazla çalışmamı bekliyorlar",
-        "görev başı ödeme politikası değişti",
-        "motosikletim eskidi ama yenileyemiyorum",
-        "sigorta primimi kendim ödüyorum",
-        "tatil yok, izin yok",
-        "günde 10 saat çalışıyorum ama yetmiyor",
-        "yağmur çamur demeden çalışıyoruz",
-        "şirket bizi taşeron gibi görüyor",
-        "ödeme sistemi güven vermiyor",
-        "her görev için farklı kurallar var",
-        "tam zamanlı gibi ama esnek deniliyor",
-        "platformun beklentisi çok yüksek",
-        "uygulama güncellemeleri sorun çıkarıyor",
-        "kuryeler olarak organize olmamız gerek",
-        "sendikal haklarımız yok",
-        "platform bize yükümlülük dayatıyor",
-        "çalışma saatleri sağlıksız",
-        "performans düşerse görev düşüyor",
-        "yorgunluk sınırına geldim",
-        "bu işi bırakan çok kişi var",
-        "desteğe ulaşmak saatler sürüyor",
-        "platform geri bildirimleri ciddiye almıyor",
-        "emeğimizin karşılığı verilmiyor",
-        "tek başıma çalışmak psikolojik olarak zor",
-        "çalışırken baskı hissediyorum",
-        "platform sürekli kural değiştiriyor",
-        "görevlerin dağılımı adil değil",
-        "iş güvenliği çok zayıf",
-        "kazanç sistemi çok karmaşık",
-        "kendimi yalnız hissediyorum bu işte",
-        "iş yükü giderek artıyor",
-        "yorgunluktan hata yapıyorum",
-        "maddi kaygılarla çalışıyorum",
-        "bir görev iptal olunca ceza alıyoruz",
-        "işe başladığımda beklentim daha yüksekti",
-        "platform bizi dinlemiyor",
-        "tek taraflı kurallar uygulanıyor",
-        "müşteri her zaman haklı mantığı yorucu",
-        "çalışırken güvende hissetmiyorum",
-        "zorunlu görev alanı mantıksız",
-        "çok görev alınca sistem kilitleniyor"
-    ]
 
-    # Hedef embedding'lerin ortalamasını al
-    target_embeddings = model.encode(targets, convert_to_tensor=True)
+    # Hedef cümleleri dosyadan oku ve dile göre filtrele
+    target_df = pd.read_csv("platformwork_targets.csv")
+    target_sentences = target_df[target_df["lang"] == lang]["text"].tolist()
+
+    # Embedding hesapla
+    target_embeddings = model.encode(target_sentences, convert_to_tensor=True)
     mean_target = target_embeddings.mean(dim=0)
 
-    # Yorum embedding'lerini al
     comment_embeddings = model.encode(df["text"].tolist(), convert_to_tensor=True)
-
-    # Cosine similarity hesapla
     cosine_scores = util.cos_sim(comment_embeddings, mean_target).squeeze()
-
-    # Skorları dataframe'e ekle
     df["similarity"] = cosine_scores.cpu().numpy()
 
-    # Eşik uygulayalım: en az 0.4 benzerlik gereksin
-    return df[df["similarity"] >= 0.4].sort_values(by="similarity", ascending=False)
+    return df[df["similarity"] >= threshold].sort_values(by="similarity", ascending=False)

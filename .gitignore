@@ -180,3 +180,4 @@ morphology.proto
 zemberek-full.jar
 .DS_Store
 *.csv
+!platformwork_targets.csv
