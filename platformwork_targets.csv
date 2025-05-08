@@ -1,65 +1,197 @@
 lang,text
-tr,kurye olarak çalışmak çok yorucu
-tr,görev almakta zorlanıyorum
-tr,bugün hiç sipariş alamadım
-tr,moto kuryelik kazançları düştü
-tr,çalışma saatleri çok uzun
-tr,platform fazla komisyon kesiyor
-tr,sigortasız çalışıyorum
-tr,bekleme süresi çok uzun
-tr,ceza puanı adaletsiz
-tr,bu işten geçinmek zorlaştı
-tr,yağmurda çalışmak çok tehlikeli
-tr,müşteri kötü puan verdi kazancım düştü
-tr,platform beni korumuyor
-tr,sendikal haklarımız yok
-tr,bu işi bırakan çok kişi var
-tr,platform geri bildirimleri ciddiye almıyor
-tr,çalışırken güvende hissetmiyorum
-tr,iş yükü çok fazla
-tr,araç bakım masrafları çok yüksek
-tr,trafikte sürekli stres altındayım
-tr,platformun desteği yetersiz
-tr,çalışma koşulları adil değil
-tr,iş kazası riski çok yüksek
-tr,gece çalışmak çok tehlikeli
-tr,platformun algoritması adaletsiz
-tr,çalışma saatleri esnek değil
-tr,platformun iletişim desteği kötü
-tr,ödeme sistemi çok karmaşık
-tr,iş arkadaşlarımla iletişim kuramıyorum
-tr,platformun eğitim desteği yok
-tr,iş yükü ve kazanç arasında dengesizlik var
-en,I work as a delivery driver and it's exhausting
-en,The platform takes too much commission
-en,I waited all day for a job and got none
-en,I can't make a living from this gig
-en,The bonus system was removed
-en,No insurance provided by the company
-en,Long waiting times with no pay
-en,Customer ratings reduce my income unfairly
-en,The job is physically draining
-en,There’s no support from the app
-en,They assign tasks far from my location
-en,The score system is broken
-en,Too many rules and not enough reward
-en,Unpaid waiting times are demoralizing
-en,There's no job security
-en,You must be always online to get gigs
-en,I’m using my own vehicle and it’s costly
-en,The app's algorithm is unfair
-en,Working hours are too rigid
-en,The platform's support is inadequate
-en,Traffic stress is overwhelming
-en,Vehicle maintenance costs are too high
-en,The risk of accidents is too high
-en,Night shifts are dangerous
-en,The payment system is overly complicated
-en,Communication with colleagues is difficult
-en,The platform provides no training support
-en,There’s an imbalance between workload and earnings
-en,The platform doesn't value feedback
-en,The job feels increasingly insecure
-en,The app penalizes workers unfairly
-en,The platform lacks transparency in payments
-en,The work environment is not safe
+en,"The platform is user-friendly, but the fees are too high for small projects."
+en,"I found my first client within a week! Great experience so far."
+en,"Customer support is slow to respond, which delayed my project."
+en,"The bidding system feels unfair; new freelancers struggle to get noticed."
+en,"Payments are always on time, and the escrow system gives me confidence."
+en,"Too many low-budget clients, it’s hard to find quality projects."
+en,"The mobile app is glitchy, needs improvement for better usability."
+en,"I love the variety of projects available, from design to writing."
+en,"Verification process was smooth, but it took a few days."
+en,"The platform helped me build my portfolio with great clients."
+en,"Competition is tough, but the platform offers great exposure."
+en,"The interface is intuitive, makes managing projects easy."
+en,"Some clients are unresponsive, which complicates project delivery."
+en,"I earned more than expected in my first month, highly recommend!"
+en,"The platform’s algorithm seems to favor established freelancers."
+en,"Secure payment system is a big plus for freelancers."
+en,"Finding consistent work is challenging due to high competition."
+en,"The platform’s tutorials helped me get started quickly."
+en,"I had issues with a client, but support resolved it eventually."
+en,"Great for part-time freelancers looking to earn extra income."
+en,"The platform needs better filters to find relevant projects."
+en,"I got a long-term client through the platform, very satisfied."
+en,"Sometimes the platform feels oversaturated with freelancers."
+en,"The review system helps build trust with new clients."
+en,"I wish there were more high-budget projects available."
+en,"The platform’s dashboard is clean and easy to navigate."
+en,"Slow payment processing for international freelancers."
+en,"I learned new skills by working on diverse projects."
+en,"The platform’s community forums are very helpful."
+en,"Some clients try to negotiate prices too low."
+en,"The platform’s analytics help track my performance."
+en,"I had a great experience with a supportive client."
+en,"The platform should improve its dispute resolution process."
+en,"I found the perfect niche for my skills on this platform."
+en,"The mobile app crashes occasionally, needs fixing."
+en,"The platform’s rating system motivates me to perform better."
+en,"I’ve had consistent work for months, very reliable."
+en,"Some projects have unclear requirements, which wastes time."
+en,"The platform’s customer service is hit or miss."
+en,"I built a strong client base thanks to the platform."
+en,"The platform’s fees are reasonable for the exposure it provides."
+en,"I struggled to get noticed without a premium account."
+en,"The platform’s project recommendations are spot-on."
+en,"I had a payment issue, but it was resolved quickly."
+en,"The platform is great for networking with other freelancers."
+en,"Some clients disappear after project submission."
+en,"The platform’s UI is modern and easy to use."
+en,"I wish there were more tools for project management."
+en,"The platform helped me transition to full-time freelancing."
+en,"Too many freelancers bidding on the same projects."
+en,"The platform’s support for new users is excellent."
+en,"I found high-paying clients after building my profile."
+en,"The platform’s fee structure is confusing at times."
+en,"I enjoy the flexibility of choosing my own projects."
+en,"The platform needs better protection against scammers."
+en,"I got great feedback that boosted my profile."
+en,"The platform’s search filters could be more precise."
+en,"I’ve had a steady income stream thanks to the platform."
+en,"Some clients are very demanding for low budgets."
+en,"The platform’s onboarding process is straightforward."
+en,"I had trouble verifying my account initially."
+en,"The platform’s messaging system is very convenient."
+en,"I wish there were more local clients on the platform."
+en,"The platform helped me gain confidence as a freelancer."
+en,"Some projects take too long to get approved."
+en,"The platform’s portfolio feature showcases my work well."
+en,"I had a bad experience with a rude client."
+en,"The platform’s payment protection is a lifesaver."
+en,"I found it hard to stand out in a crowded market."
+en,"The platform’s blog has useful tips for freelancers."
+en,"I had a smooth experience with my first project."
+en,"The platform’s notifications keep me updated."
+en,"Some clients expect too much for too little pay."
+en,"The platform’s escrow system is very secure."
+en,"I wish the platform offered more training resources."
+en,"The platform helped me connect with global clients."
+en,"The bidding process can be time-consuming."
+en,"The platform’s interface is great for beginners."
+en,"I had an issue with a delayed payment."
+en,"The platform’s community is supportive and active."
+en,"Some clients don’t provide clear instructions."
+en,"The platform’s analytics are useful for growth."
+en,"I found a great mentor through the platform."
+en,"The platform’s fees are a bit steep for beginners."
+en,"I love the flexibility of working remotely."
+en,"The platform’s dispute system needs improvement."
+en,"I got my first international client through the platform."
+en,"The platform’s search algorithm could be better."
+en,"The platform helped me discover new opportunities."
+en,"Some clients cancel projects unexpectedly."
+en,"The platform’s verification process is thorough."
+en,"I had a great experience with a repeat client."
+en,"The platform’s mobile app needs more features."
+en,"I built a sustainable freelance career here."
+en,"The platform’s customer support could be faster."
+en,"I found my dream project on this platform!"
+en,"The platform’s fees are worth it for the opportunities."
+en,"I struggled to get my first project, but it got easier."
+tr,"Platform çok kullanışlı, ama küçük projeler için komisyonlar fazla yüksek."
+tr,"İlk müşterimi bir haftada buldum! Şimdilik harika bir deneyim."
+tr,"Müşteri desteği yavaş, bu da projemin gecikmesine neden oldu."
+tr,"Teklif sistemi adil değil; yeni freelancerlar fark edilmekte zorlanıyor."
+tr,"Ödemeler her zaman zamanında, emanet sistemi güven veriyor."
+tr,"Çok fazla düşük bütçeli müşteri var, kaliteli proje bulmak zor."
+tr,"Mobil uygulama hatalı, daha iyi kullanılabilirlik için geliştirilmeli."
+tr,"Tasarım ve yazım gibi çok çeşitli projeler olması hoşuma gidiyor."
+tr,"Doğrulama süreci sorunsuzdu, ama birkaç gün sürdü."
+tr,"Platform, harika müşterilerle portföyümü oluşturmama yardımcı oldu."
+tr,"Rekabet zor, ama platform iyi bir görünürlük sağlıyor."
+tr,"Arayüz sezgisel, proje yönetimi kolaylaştırıyor."
+tr,"Bazı müşteriler yanıt vermiyor, bu da teslimatı zorlaştırıyor."
+tr,"İlk ayımda beklediğimden fazla kazandım, kesinlikle tavsiye ederim!"
+tr,"Platformun algoritması köklü freelancerları kayırıyor gibi."
+tr,"Güvenli ödeme sistemi freelancerlar için büyük bir artı."
+tr,"Yüksek rekabet nedeniyle istikrarlı iş bulmak zor."
+tr,"Platformun eğitim videoları hızlı başlamama yardımcı oldu."
+tr,"Bir müşteriyle sorun yaşadım, ama destek sonunda çözdü."
+tr,"Ek gelir elde etmek isteyen yarı zamanlı freelancerlar için harika."
+tr,"Platformun daha iyi proje filtrelerine ihtiyacı var."
+tr,"Platform sayesinde uzun vadeli bir müşteri buldum, çok memnunum."
+tr,"Bazen platformda çok fazla freelancer oluyor."
+tr,"İnceleme sistemi yeni müşterilerle güven oluşturuyor."
+tr,"Keşke daha fazla yüksek bütçeli proje olsaydı."
+tr,"Platformun kontrol paneli temiz ve kullanımı kolay."
+tr,"Uluslararası freelancerlar için ödeme işlemi yavaş."
+tr,"Farklı projelerde çalışarak yeni beceriler öğrendim."
+tr,"Platformun topluluk forumları çok faydalı."
+tr,"Bazı müşteriler fiyatları çok düşürmeye çalışıyor."
+tr,"Platformun analiz araçları performansımı takip etmeme yardımcı oluyor."
+tr,"Destekleyici bir müşteriyle harika bir deneyim yaşadım."
+tr,"Platformun anlaşmazlık çözüm süreci geliştirilmeli."
+tr,"Platformda becerilerime uygun mükemmel bir niş buldum."
+tr,"Mobil uygulama ara sıra çöküyor, düzeltilmeli."
+tr,"Platformun puanlama sistemi daha iyi performans göstermemi teşvik ediyor."
+tr,"Aylar boyunca düzenli iş aldım, çok güvenilir."
+tr,"Bazı projelerin gereksinimleri belirsiz, bu da zaman kaybı."
+tr,"Platformun müşteri hizmetleri bazen yetersiz kalıyor."
+tr,"Platform sayesinde güçlü bir müşteri tabanı oluşturdum."
+tr,"Platformun ücretleri sağladığı görünürlük için makul."
+tr,"Premium hesap olmadan fark edilmek zor oldu."
+tr,"Platformun proje önerileri çok isabetli."
+tr,"Bir ödeme sorunu yaşadım, ama hızlıca çözüldü."
+tr,"Platform, diğer freelancerlarla ağ kurmak için harika."
+tr,"Bazı müşteriler proje tesliminden sonra kayboluyor."
+tr,"Platformun arayüzü modern ve kullanımı kolay."
+tr,"Keşke proje yönetimi için daha fazla araç olsaydı."
+tr,"Platform, tam zamanlı freelancerlığa geçiş yapmama yardımcı oldu."
+tr,"Aynı projelere çok fazla freelancer teklif veriyor."
+tr,"Platformun yeni kullanıcılar için desteği mükemmel."
+tr,"Profilimi oluşturduktan sonra yüksek ücretli müşteriler buldum."
+tr,"Platformun ücret yapısı bazen kafa karıştırıcı."
+tr,"Kendi projelerimi seçme özgürlüğünü seviyorum."
+tr,"Platformun dolandırıcılara karşı daha iyi korumaya ihtiyacı var."
+tr,"Profilimi güçlendiren harika geri bildirimler aldım."
+tr,"Platformun arama filtreleri daha kesin olmalı."
+tr,"Platform sayesinde istikrarlı bir gelir akışı elde ettim."
+tr,"Bazı müşteriler düşük bütçelerle çok talepkar."
+tr,"Platformun başlangıç süreci oldukça basit."
+tr,"Hesabımı doğrulamada başlangıçta sorun yaşadım."
+tr,"Platformun mesajlaşma sistemi çok kullanışlı."
+tr,"Keşke platformda daha fazla yerel müşteri olsaydı."
+tr,"Platform, freelancer olarak özgüven kazanmama yardımcı oldu."
+tr,"Bazı projeler onaylanmak için çok uzun sürüyor."
+tr,"Platformun portföy özelliği çalışmalarımı iyi sergiliyor."
+tr,"Kaba bir müşteriyle kötü bir deneyim yaşadım."
+tr,"Platformun ödeme koruma sistemi kurtarıcı."
+tr,"Kalabalık bir pazarda öne çıkmak zor oldu."
+tr,"Platformun blogu freelancerlar için faydalı ipuçları içeriyor."
+tr,"İlk projemde sorunsuz bir deneyim yaşadım."
+tr,"Platformun bildirimleri beni güncel tutuyor."
+tr,"Bazı müşteriler az ödeme için çok şey bekliyor."
+tr,"Platformun emanet sistemi çok güvenli."
+tr,"Platformun daha fazla eğitim kaynağı sunmasını isterdim."
+tr,"Platform, küresel müşterilerle bağlantı kurmama yardımcı oldu."
+tr,"Teklif süreci zaman alıcı olabiliyor."
+tr,"Platformun arayüzü yeni başlayanlar için harika."
+tr,"Bir ödemede gecikme sorunu yaşadım."
+tr,"Platformun topluluğu destekleyici ve aktif."
+tr,"Bazı müşteriler net talimatlar vermiyor."
+tr,"Platformun analiz araçları büyümem için faydalı."
+tr,"Platform sayesinde harika bir mentor buldum."
+tr,"Platformun ücretleri yeni başlayanlar için biraz yüksek."
+tr,"Uzaktan çalışmanın esnekliğini seviyorum."
+tr,"Platformun anlaşmazlık sistemi geliştirilmeli."
+tr,"Platform sayesinde ilk uluslararası müşterimi buldum."
+tr,"Platformun arama algoritması daha iyi olabilir."
+tr,"Platform, yeni fırsatlar keşfetmeme yardımcı oldu."
+tr,"Bazı müşteriler projeleri beklenmedik şekilde iptal ediyor."
+tr,"Platformun doğrulama süreci oldukça kapsamlı."
+tr,"Tekrar eden bir müşteriyle harika bir deneyim yaşadım."
+tr,"Platformun mobil uygulamasına daha fazla özellik lazım."
+tr,"Burada sürdürülebilir bir freelancer kariyeri kurdum."
+tr,"Platformun müşteri desteği daha hızlı olabilir."
+tr,"Platformda hayalimdeki projeyi buldum!"
+tr,"Platformun ücretleri sunduğu fırsatlar için değiyor."
+tr,"İlk projemi almakta zorlandım, ama sonra kolaylaştı."
