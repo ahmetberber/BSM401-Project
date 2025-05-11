@@ -6,6 +6,8 @@ import praw
 from clean import process_dataframe
 from semantic_filter import filter_platformwork_semantically
 import csv
+import os
+from datetime import datetime
 
 # Number of reviews to fetch
 REVIEW_COUNT = 500
@@ -69,7 +71,7 @@ def fetch_reddit_posts(query, client_id, client_secret, user_agent):
         for submission in reddit.subreddit("all").search(query, limit=REVIEW_COUNT, sort='new')
     ])
 
-def fetch_data_from_platforms():
+def fetch_data_from_platforms(output_dir):
     # Fetch data from tr platforms
     reddit_tr_data = fetch_reddit_posts(
         query="armut OR getir OR trendyol OR yemeksepeti",
@@ -115,23 +117,28 @@ def fetch_data_from_platforms():
     # Clean and process the data
     processed_tr_data = process_dataframe(combined_tr_data, lang='tr')
     processed_us_data = process_dataframe(combined_us_data, lang='en')
-    processed_tr_data.to_csv("tr_data.csv", index=False, encoding='utf-8', quoting=csv.QUOTE_NONNUMERIC)
-    processed_us_data.to_csv("us_data.csv", index=False, encoding='utf-8', quoting=csv.QUOTE_NONNUMERIC)
+    processed_tr_data.to_csv(os.path.join(output_dir, "tr_data.csv"), index=False, encoding='utf-8', quoting=csv.QUOTE_NONNUMERIC)
+    processed_us_data.to_csv(os.path.join(output_dir, "us_data.csv"), index=False, encoding='utf-8', quoting=csv.QUOTE_NONNUMERIC)
 
 def main():
+    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    output_dir = f"output_{timestamp}"
+    
+    os.makedirs(output_dir, exist_ok=True)
+
     # Fetch data from platforms
-    fetch_data_from_platforms()
+    fetch_data_from_platforms(output_dir)
 
     # Filter semantically relevant comments
-    processed_tr_data = pd.read_csv("tr_data.csv")
+    processed_tr_data = pd.read_csv(os.path.join(output_dir, "tr_data.csv"))
     filtered_tr_data = filter_platformwork_semantically(processed_tr_data, lang='tr')
-    processed_us_data = pd.read_csv("us_data.csv")
+    processed_us_data = pd.read_csv(os.path.join(output_dir, "us_data.csv"))
     filtered_us_data = filter_platformwork_semantically(processed_us_data, lang='en')
 
-    # # Save the filtered data to a CSV file
-    filtered_tr_data.to_csv("tr_processed_data.csv", index=False, encoding='utf-8')
-    filtered_us_data.to_csv("us_processed_data.csv", index=False, encoding='utf-8')
-    print("Filtered data saved to tr_processed_data.csv and us_processed_data.csv")
+    # Save the filtered data to a CSV file
+    filtered_tr_data.to_csv(os.path.join(output_dir, "tr_processed_data.csv"), index=False, encoding='utf-8')
+    filtered_us_data.to_csv(os.path.join(output_dir, "us_processed_data.csv"), index=False, encoding='utf-8')
+    print(f"Filtered data saved to {output_dir}/tr_processed_data.csv and {output_dir}/us_processed_data.csv")
 
 if __name__ == "__main__":
     main()
